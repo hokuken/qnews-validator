@@ -26,5 +26,8 @@ gulp.task 'watch', ->
   watch config.watch.src, ->
     gulp.start ['uglify', 'copy']
 
+gulp.task 'build', ['clean'], ->
+  gulp.start ['uglify', 'copy']
+
 gulp.task 'default', ['clean'], ->
   gulp.start ['uglify', 'copy', 'watch']
