@@ -1,9 +1,5 @@
 # QNewsletter 登録フォーム検証スクリプト
 
-このスクリプトは Hokuken.Inc <customer@hokuken.com> が作成しました。
-MITライセンスを適用していますのでライセンスの範囲内で自由に複製、改変が可能です。
-
-
 ## 概要
 
 QNewsletter の登録フォームに下記の検証機能を追加します。
@@ -129,3 +125,26 @@ validation.min.js を適当な場所へ置きます。
 </style>
 ```
 
+## ライセンス
+
+The MIT License (MIT)
+
+Copyright (c) 2015 Hokuken.Inc <customer@hokuken.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
