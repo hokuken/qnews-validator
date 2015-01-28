@@ -8,6 +8,32 @@ if (!String.prototype.trim) {
   };
 }
 
+if (!Array.prototype.reduce) {
+  Array.prototype.reduce = function reduce(accumulator){
+    if (this===null || this===undefined) throw new TypeError("Object is null or undefined");
+
+    var i = 0, l = this.length >> 0, curr;
+
+    if(typeof accumulator !== "function") // ES5 : "If IsCallable(callbackfn) is false, throw a TypeError exception."
+      throw new TypeError("First argument is not callable");
+
+    if(arguments.length < 2) {
+      if (l === 0) throw new TypeError("Array length is 0 and no second argument");
+      curr = this[0];
+      i = 1; // start accumulating at the second element
+    }
+    else
+      curr = arguments[1];
+
+    while (i < l) {
+      if(i in this) curr = accumulator.call(undefined, curr, this[i], i, this);
+      ++i;
+    }
+
+    return curr;
+  };
+}
+
 $(function(){
 
   // ----- 必要があれば編集してください -----
@@ -93,18 +119,12 @@ $(function(){
   // @param array from validate
   // @return boolean
   var formIsOK = function(results){
-    if (results.length === 0) return false;
-    var base = undefined;
-    $.each(results, function(i, result){
-      if (typeof result === "undefined") return;
-      if (typeof base === "undefined") {
-        base = result.success;
-      } else {
-        base = base && result.success;
-      }
-    });
-    if (typeof base === "undefined") return false;
-    return base;
+    var callback = function(v, result){
+      if (typeof v === "undefined") return result.success;
+      if (typeof result === "undefined") return v;
+      return v && result.success;
+    };
+    return !!results.reduce(callback, undefined);
   };
 
   // エラーメッセージのみ抽出する
