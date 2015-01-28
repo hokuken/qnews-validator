@@ -94,7 +94,10 @@ $(function(){
       clearErrs();
       enableForm();
     }
-    else showErrs(results);
+    else {
+      disableForm();
+      showErrs(results);
+    }
   };
 
   // email と email2 の一致を検証する
