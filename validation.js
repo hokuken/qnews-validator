@@ -63,21 +63,38 @@ $(function(){
 
   // フォームを送信不可にする
   var disableForm = function(){
-  $(registerForm)
-    .prop("disabled", true)
+    $(registerForm)
     .addClass(lockedClassName)
     .on("submit.qnews", function(e){
+      e.preventDefault();
+    });
+
+    disableSubmitButton();
+  };
+
+  // サブミットボタンをクリック不可にする
+  var disableSubmitButton = function(){
+    $("input:submit, button[type=submit]", registerForm)
+    .prop("disabled", true)
+    .on("click.qnews", function(e){
       e.preventDefault();
     });
   };
 
   // フォームを送信可能にする
   var enableForm = function(){
-  $(registerForm)
-    .prop("disabled", false)
+    $(registerForm)
     .removeClass(lockedClassName)
     .off("submit.qnews");
+
+    enableSubmitButton();
   }
+
+  var enableSubmitButton = function(){
+    $("input:submit, button[type=submit]", registerForm)
+    .prop("disabled", false)
+    .off("click.qnews");
+  };
 
   // フォームを検証可能にする
   var enableValidation = function(){
