@@ -1,6 +1,6 @@
 {
   "name": "qnews-validator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "このスクリプトは Hokuken.Inc <customer@hokuken.com> が作成しました。 MITライセンスを適用していますのでライセンスの範囲内で自由に複製、改変が可能です。",
   "main": "validation.js",
   "scripts": {
